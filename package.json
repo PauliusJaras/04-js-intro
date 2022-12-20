@@ -7,6 +7,7 @@
     "index": "nodemon ./js/index.js",
     "funkcijos": "nodemon ./js/funkcijos.js",
     "uzdavinys": "nodemon ./js/uzdavinys.js",
+    "testtest": "nodemon ./js/test.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
