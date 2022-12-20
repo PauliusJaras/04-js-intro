@@ -48,13 +48,13 @@ function didziausiasSkaiciusSarase(arr){
     } else if(arr.length == 0){
         return "Pateiktas sąrašas negali būti tuščias.";
     } else {
-        let highestNumber = [-1];
-        for(ar of arr){
+        let highestNumber = -Infinity;
+        arr.forEach(ar =>{
             if(!isNaN(ar) && isFinite(ar) && typeof ar != typeof true && typeof ar != typeof []){
                 highestNumber < ar ? (highestNumber = ar) : 0;
             } 
-        }
-        return highestNumber;
+        });
+        return isFinite(highestNumber) ? highestNumber : "ERROR";
     }
 }
 
@@ -91,55 +91,55 @@ console.log(didziausiasSkaiciusSarase(['true', true, NaN, [], [5], Infinity, -In
 
 console.groupEnd();
 
-// console.groupCollapsed("#5: Funkcija pavadinimu “isrinktiRaides”:")
+console.groupCollapsed("#5: Funkcija pavadinimu “isrinktiRaides”:")
 
-// function isrinktiRaides(text, num){
-//     if(typeof text != 'string'){
-//         return "Pirmasis kintamasis yra netinkamo tipo";
-//     } else if(text.length <= 0 || text.length >= 100) {
-//             return "Pirmojo kintamojo reikšmė yra netinkamo dydžio.";
-//     } else if(typeof num != typeof 1 || Number.isNaN(num) == true){
-//             return "Antrasis kintamasis yra netinkamo tipo.";
-//     } else if(num <= 0){
-//         return "Antrasis kintamasis turi būti didesnis už nulį.";
-//     } else if (text.length < num){
-//         return "Antrasis kintamasis turi būti ne didesnis už pateikto teksto ilgį";
-//     } else{
-//         let result = "";
-//         for(let i = num-1; i < text.length; i+=num ){
-//             result += text[i];
-//         }
-//         return result;
-//     }
-// }
+function isrinktiRaides(text, num){
+    if(typeof text != 'string'){
+        return "Pirmasis kintamasis yra netinkamo tipo";
+    } else if(text.length <= 0 || text.length >= 100) {
+            return "Pirmojo kintamojo reikšmė yra netinkamo dydžio.";
+    } else if(typeof num != typeof 1 || Number.isNaN(num) == true){
+            return "Antrasis kintamasis yra netinkamo tipo.";
+    } else if(num <= 0){
+        return "Antrasis kintamasis turi būti didesnis už nulį.";
+    } else if (text.length < num){
+        return "Antrasis kintamasis turi būti ne didesnis už pateikto teksto ilgį";
+    } else{
+        let result = "";
+        for(let i = num-1; i < text.length; i+=num ){
+            result += text[i];
+        }
+        return result;
+    }
+}
 
-// console.log(isrinktiRaides("abcdefg", 2));
-// console.log(isrinktiRaides("abcdefghijkl", 3));
-// console.log(isrinktiRaides("abc", 0));
-// console.log(isrinktiRaides("abc", 4));
-// console.log(isrinktiRaides(1561, 2));
-// console.groupEnd();
+console.log(isrinktiRaides("abcdefg", 2));
+console.log(isrinktiRaides("abcdefghijkl", 3));
+console.log(isrinktiRaides("abc", 0));
+console.log(isrinktiRaides("abc", 4));
+console.log(isrinktiRaides(1561, 2));
+console.groupEnd();
 
-// console.groupCollapsed("#6: Funkcija pavadinimu “dalyba”:")
+console.groupCollapsed("#6: Funkcija pavadinimu “dalyba”:")
 
-// function dalyba(a,b){
-//     if(typeof a != typeof 1 || Number.isNaN(a) == true){
-//         return "Pirmasis kintamasis yra netinkamo tipo";
-//     } else if(typeof b != typeof 1 || Number.isNaN(b) == true){
-//         return "Antrasis kintamasis yra netinkamo tipo.";
-//     } else if(b == 0){
-//         return "Dalyba is nulio negalima";
-//     } else {
-//         let result = a / b;
-//         return result;
-//     }
-// }
+function dalyba(a,b){
+    if(typeof a != typeof 1 || Number.isNaN(a) == true){
+        return "Pirmasis kintamasis yra netinkamo tipo";
+    } else if(typeof b != typeof 1 || Number.isNaN(b) == true){
+        return "Antrasis kintamasis yra netinkamo tipo.";
+    } else if(b == 0){
+        return "Dalyba is nulio negalima";
+    } else {
+        let result = a / b;
+        return result;
+    }
+}
 
-// console.log(dalyba(4,2));
-// console.log(dalyba("7a",2));
-// console.log(dalyba(4,"2"));
-// console.log(dalyba(6,0));
-// console.log(dalyba(0,9));
-// console.groupEnd();
+console.log(dalyba(4,2));
+console.log(dalyba("7a",2));
+console.log(dalyba(4,"2"));
+console.log(dalyba(6,0));
+console.log(dalyba(0,9));
+console.groupEnd();
 
-// console.groupEnd();
+console.groupEnd();
