@@ -1,11 +1,13 @@
-function hexHash(code){
-    let arr = []
-    for(let i = 0; i < code.length; i++){
-        console.log(code[i].charCodeAt(0).toString(16));
-        let numSum = 
-        arr.push[]
+function findMissingLetter(array)
+{
+  let charCode = array[0].charCodeAt();
+  for(let i = 1; i < array.length; i++){
+    if(charCode+1 != array[i].charCodeAt()){
+      return String.fromCharCode(charCode+1)
+    } else{
+      charCode = array[i].charCodeAt();
     }
-
   }
+}
 
-  hexHash("Yo");
+findMissingLetter(['a','b','c','d','f']);

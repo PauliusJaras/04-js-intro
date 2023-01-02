@@ -2,8 +2,10 @@
   "name": "04-js-intro",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
+    "shop": "nodemon ./shop/index.js",
     "index": "nodemon ./js/index.js",
     "funkcijos": "nodemon ./js/funkcijos.js",
     "uzdavinys": "nodemon ./js/uzdavinys.js",
